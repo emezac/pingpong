@@ -1,0 +1,47 @@
+<div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form novalidate name="newPlayer" ng-submit="createPlayer()">
+        <div class="modal-header">
+          <button type="button" class="close" aria-label="Close" ng-click="$hide()"><span aria-hidden="true">&times;</span></button>
+          <h2 class="modal-title">Add a player</h2>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Name:</label>
+            <input class="form-control" name="name" type="text" ng-model="new_player.name" required/>
+            <span class="text-danger" ng-show="newPlayer.name.$touched && newPlayer.name.$invalid">The name is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label>E-mail:</label>
+            <input class="form-control" name="email" type="email" ng-model="new_player.email" required/>
+            <span class="text-danger" ng-show="newPlayer.email.$touched && newPlayer.email.$invalid">The email is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label>City:</label>
+            <input class="form-control" name="city" type="text" ng-model="new_player.city" required/>
+            <span class="text-danger" ng-show="newPlayer.city.$touched && newPlayer.city.$invalid">The city is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label>Street:</label>
+            <input class="form-control" name="street" type="text" ng-model="new_player.street" required/>
+            <span class="text-danger" ng-show="newPlayer.street.$touched && newPlayer.street.$invalid">The street is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label>Post code:</label>
+            <input class="form-control" name="postal_code" type="text" ng-model="new_player.postal_code" required/>
+            <span class="text-danger" ng-show="newPlayer.postal_code.$touched && newPlayer.postal_code.$invalid">The post code is required.</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" ng-click="$hide()">Close</button>
+          <input ng-disabled="newPlayer.$invalid" class="btn btn-success" type="submit" value="Save"/>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

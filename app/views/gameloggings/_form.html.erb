@@ -1,0 +1,57 @@
+<%= form_for(gamelogging) do |f| %>
+  <% if gamelogging.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gamelogging.errors.count, "error") %> prohibited this gamelogging from being saved:</h2>
+
+      <ul>
+      <% gamelogging.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :newschronic %>
+    <%= f.text_area :newschronic %>
+  </div>
+
+  <div class="field">
+    <%= f.label :eventime %>
+    <%= f.datetime_select :eventime %>
+  </div>
+
+  <div class="field">
+    <%= f.label :scorepl1 %>
+    <%= f.number_field :scorepl1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :scoreplayer2 %>
+    <%= f.number_field :scoreplayer2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :finalpoints %>
+    <%= f.check_box :finalpoints %>
+  </div>
+
+  <div class="field">
+    <%= f.label :game_id %>
+    <%= f.text_field :game_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :player1_id %>
+    <%= f.text_field :player1_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :player2_id %>
+    <%= f.text_field :player2_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

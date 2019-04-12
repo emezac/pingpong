@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1>
+      Player # {{ player.id}}
+      <a class="btn btn-default" ui-sref="/players">Back</a>
+    </h1>
+
+    <dl class="dl-horizontal">
+      <dt>Name:</dt>
+      <dd>{{ player.name }}</dd>
+      <dt>Email:</dt>
+      <dd>{{ player.email }}</dd>
+      <dt>Street:</dt>
+      <dd>{{ player.street }}</dd>
+      <dt>City:</dt>
+      <dd>{{ player.city }}</dd>
+      <dt>Post code:</dt>
+      <dd>{{ player.postal_code }}</dd>
+    </dl>
+
+    <h2>
+      Histories
+      <a ng-click="addHistory()" class="btn btn-success">Add history</a>
+    </h2>
+
+    <input ng-change="filterHistories()" ng-model="query" class="form-control" placeholder="Search">
+
+    <div ng-show="histories.length">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>NamePlayer</th>
+            <th>Status</th>
+            <th>Award</th>
+            <th>Chronic</th>
+            <th>Oponent</th>
+            <th>Score</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="history in histories">
+            <td>{{ history.name }}</td>
+            <td>{{ history.status | humanize }}</td>
+            <td>{{ history.award | currency }}</td>
+            <td>{{ history.chronic }}</td>
+            <td>{{ history.oponent }}</td>
+            <td>{{ history.score }}</td>
+            <td>
+              <a class="btn btn-primary btn-xs" ui-sref="/history({ playerId: player.id, historyId: history.id })">Show</a>
+              <a class="btn btn-warning btn-xs" ng-click="editHistory(history, $index)">Edit</a>
+              <a class="btn btn-danger btn-xs" ng-click="destroyHistory(player.id, history.id, $index)">Destroy</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div ng-hide="histories.length">
+       <div class="alert alert-warning">
+        <strong>Warning!</strong> There isn't any history yet!
+      </div>
+    </div>
+  </div>
+</div>

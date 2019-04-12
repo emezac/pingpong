@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1>
+      Players
+      <a class="btn btn-success" ng-click="addPlayer()">Add player</a>
+    </h1>
+
+    <input type="text" placeholder="Search" class="form-control" ng-model="query" ng-change="filterPlayers()">
+
+    <div ng-show="players.length">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>Post code</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="player in players">
+            <td>{{ player.name }}</td>
+            <td>{{ player.email }}</td>
+            <td>{{ player.street }}</td>
+            <td>{{ player.city }}</td>
+            <td>{{ player.postal_code }}</td>
+            <td>
+              <a class="btn btn-primary btn-xs" ui-sref="/player({ playerId: player.id })">Show</a>
+              <a class="btn btn-warning btn-xs" ng-click="editPlayer(player, $index)">Edit</a>
+              <a class="btn btn-danger btn-xs" ng-click="destroyPlayer(player.id, $index)">Destroy</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div ng-hide="players.length">
+      <div class="alert alert-warning">
+        <strong>Warning!</strong> There isn't any player yet!
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+<img src='assets/img/player.jpg'>
+</div>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  player: one
+  oponent: MyString
+  status: 1
+  award: 1.5
+  name: MyString
+  chronic: MyText
+  score: MyText
+
+two:
+  player: two
+  oponent: MyString
+  status: 1
+  award: 1.5
+  name: MyString
+  chronic: MyText
+  score: MyText

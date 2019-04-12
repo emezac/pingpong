@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1>
+      History # {{ history.id}}
+
+      <a class="btn btn-default" ui-sref="/player({ playerId: history.player.id })">Back</a>
+    </h1>
+
+    <dl class="dl-horizontal">
+      <dt>Player:</dt>
+      <dd>{{ history.name }}</dd>
+      <dt>Chronic:</dt>
+      <dd>{{ history.chronic }}</dd>
+      <dt>Award:</dt>
+      <dd>{{ history.award | currency }}</dd>
+      <dt>Oponent:</dt>
+      <dd>{{ history.oponent }}</dd>
+      <dt>Score:</dt>
+      <dd>{{ history.score }}</dd>
+      <dt>Status:</dt>
+      <dd>{{ history.status }}</dd>
+      <dt>Player:</dt>
+      <dd>{{ history.player.name }}</dd>
+    </dl>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<%= form_for(scoreboard) do |f| %>
+  <% if scoreboard.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(scoreboard.errors.count, "error") %> prohibited this scoreboard from being saved:</h2>
+
+      <ul>
+      <% scoreboard.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :scoreplayer1 %>
+    <%= f.number_field :scoreplayer1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :scoreplayer2 %>
+    <%= f.number_field :scoreplayer2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :player_id %>
+    <%= f.text_field :player_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,54 @@
+<div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form novalidate name="newHistory" ng-submit="createHistory()">
+        <div class="modal-header">
+          <button type="button" class="close" aria-label="Close" ng-click="$hide()"><span aria-hidden="true">&times;</span></button>
+          <h2 class="modal-title">Add a history</h2>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Name:</label>
+            <input class="form-control" name="name" type="text" ng-model="new_history.name" required/>
+            <span class="text-danger" ng-show="newHistory.name.$touched && newHistory.name.$invalid">The name is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label>Chronic:</label>
+            <textarea class="form-control" name="chronic" ng-model="new_history.chronic" required/></textarea>
+            <span class="text-danger" ng-show="newHistory.chronic.$touched && newHistory.chronic.$invalid">The chronic is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label>Score:</label>
+            <textarea class="form-control" name="score" ng-model="new_history.score" required/></textarea>
+            <span class="text-danger" ng-show="newHistory.score.$touched && newHistory.score.$invalid">The score is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label>Oponent:</label>
+            <textarea class="form-control" name="oponent" ng-model="new_history.oponent" required/></textarea>
+            <span class="text-danger" ng-show="newHistory.oponent.$touched && newHistory.oponent.$invalid">The oponent is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label>Award:</label>
+            <input class="form-control" name="award" type="number" ng-model="new_history.award" required/>
+            <span class="text-danger" ng-show="newHistory.award.$touched && newHistory.award.$invalid">The award is required.</span>
+          </div>
+          <div class="form-group">
+            <label>Status:</label>
+            <select class="form-control" ng-model="new_history.status" required>
+              <option ng-repeat="status in history_statuses" value="{{status.name}}" required>{{ status.name }}</option>
+            </select>
+            <span class="text-danger" ng-show="newHistory.status.$touched && newHistory.status.$invalid">The status is required.</span>
+          </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" ng-click="$hide()">Close</button>
+          <input ng-disabled="newHistory.$invalid" class="btn btn-success" type="submit" value="Save"/>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

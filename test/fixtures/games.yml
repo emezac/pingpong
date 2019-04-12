@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game: MyString
+  date: 2018-11-24 20:13:31
+
+two:
+  game: MyString
+  date: 2018-11-24 20:13:31

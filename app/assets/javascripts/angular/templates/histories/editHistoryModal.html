@@ -1,0 +1,58 @@
+<div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form novalidate name="editHistory" ng-submit="updateHistory()">
+        <div class="modal-header">
+          <button type="button" class="close" aria-label="Close" ng-click="$hide()"><span aria-hidden="true">&times;</span></button>
+          <h2 class="modal-title">Edit a history</h2>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Name:</label>
+            <input class="form-control" name="name" type="text" ng-model="history.name" required/>
+            <span class="text-danger" ng-show="editHistory.name.$touched && editHistory.name.$invalid">The name is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label>Chronic:</label>
+            <textarea class="form-control" name="chronic" ng-model="history.chronic" required/></textarea>
+            <span class="text-danger" ng-show="editHistory.chronic.$touched && editHistory.chronic.$invalid">The chronic is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label>Award:</label>
+            <input class="form-control" name="award" type="number" ng-model="history.award" required/>
+            <span class="text-danger" ng-show="editHistory.award.$touched && editHistory.award.$invalid">The award is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label>Oponent:</label>
+            <input class="form-control" name="oponent"  ng-model="history.oponent" required/>
+            <span class="text-danger" ng-show="editHistory.oponent.$touched && editHistory.oponent.$invalid">The oponent is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label>Score:</label>
+            <textarea class="form-control" name="score" ng-model="history.score" required/></textarea>
+            <span class="text-danger" ng-show="editHistory.score.$touched && editHistory.score.$invalid">The score is required.</span>
+          </div>
+
+
+          <div class="form-group">
+            <label>Status:</label>
+            <select class="form-control" ng-model="history.status" required>
+              <option ng-repeat="status in history_statuses" value="{{status.name}}" required>{{ status.name }}</option>
+            </select>
+            <span class="text-danger" ng-show="editHistory.status.$touched && editHistory.status.$invalid">The status is required.</span>
+          </div>
+        </div>
+
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" ng-click="$hide()">Close</button>
+          <input ng-disabled="editHistory.$invalid" class="btn btn-success" type="submit" value="Save"/>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

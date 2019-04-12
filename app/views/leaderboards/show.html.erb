@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ranking:</strong>
+  <%= @leaderboard.ranking %>
+</p>
+
+<p>
+  <strong>Player:</strong>
+  <%= @leaderboard.player %>
+</p>
+
+<%= link_to 'Edit', edit_leaderboard_path(@leaderboard) %> |
+<%= link_to 'Back', leaderboards_path %>

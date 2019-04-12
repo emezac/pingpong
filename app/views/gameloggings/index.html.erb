@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gameloggings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Newschronic</th>
+      <th>Eventime</th>
+      <th>Scorepl1</th>
+      <th>Scoreplayer2</th>
+      <th>Finalpoints</th>
+      <th>Game</th>
+      <th>Player1</th>
+      <th>Player2</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gameloggings.each do |gamelogging| %>
+      <tr>
+        <td><%= gamelogging.newschronic %></td>
+        <td><%= gamelogging.eventime %></td>
+        <td><%= gamelogging.scorepl1 %></td>
+        <td><%= gamelogging.scoreplayer2 %></td>
+        <td><%= gamelogging.finalpoints %></td>
+        <td><%= gamelogging.game %></td>
+        <td><%= gamelogging.player1 %></td>
+        <td><%= gamelogging.player2 %></td>
+        <td><%= link_to 'Show', gamelogging %></td>
+        <td><%= link_to 'Edit', edit_gamelogging_path(gamelogging) %></td>
+        <td><%= link_to 'Destroy', gamelogging, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gamelogging', new_gamelogging_path %>

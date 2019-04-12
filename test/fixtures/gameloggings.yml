@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  newschronic: MyText
+  eventime: 2018-11-26 09:37:55
+  scorepl1: 1
+  scoreplayer2: 1
+  finalpoints: false
+  game: one
+  player1: one
+  player2: one
+
+two:
+  newschronic: MyText
+  eventime: 2018-11-26 09:37:55
+  scorepl1: 1
+  scoreplayer2: 1
+  finalpoints: false
+  game: two
+  player1: two
+  player2: two

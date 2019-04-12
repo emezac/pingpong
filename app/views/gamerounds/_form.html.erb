@@ -1,0 +1,27 @@
+<%= form_for(gameround) do |f| %>
+  <% if gameround.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gameround.errors.count, "error") %> prohibited this gameround from being saved:</h2>
+
+      <ul>
+      <% gameround.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :round %>
+    <%= f.text_area :round %>
+  </div>
+
+  <div class="field">
+    <%= f.label :game_id %>
+    <%= f.text_field :game_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
